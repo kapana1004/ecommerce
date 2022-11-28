@@ -6,7 +6,7 @@ export default function Menubar() {
     <div>
       <div className=" flex flex-row ">
         <img src="./images/icon-menu.svg" alt="menu" />
-        <h1 className=""> sneakers</h1>
+        <h1 className=" text-red-500"> sneakers</h1>
         <img src="./images/icon-cart.svg" alt="cart" />
         <img src="./images/image-avatar.png" alt="avatar" />
       </div>
