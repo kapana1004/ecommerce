@@ -1,6 +1,12 @@
 import React from "react";
 
-export default function Description({ item, setItem }) {
+export default function Description({
+  item,
+  setItem,
+  price,
+  setPrice,
+  priceHandle,
+}) {
   // const [item, setItem] = useState(0);
 
   const countItemPlus = () => {
@@ -58,7 +64,10 @@ export default function Description({ item, setItem }) {
         />
       </div>
 
-      <div className=" mb-[88px] cursor-pointer flex bg-[#FF7E1B] w-[327px] ml-[24px] rounded-[10px] h-[56px] justify-center items-center ">
+      <div
+        onClick={priceHandle}
+        className=" mb-[88px] cursor-pointer flex bg-[#FF7E1B] w-[327px] ml-[24px] rounded-[10px] h-[56px] justify-center items-center "
+      >
         <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg">
           <path
             d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 

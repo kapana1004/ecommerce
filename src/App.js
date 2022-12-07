@@ -14,6 +14,12 @@ function App() {
   const [item, setItem] = useState(0);
 
   const [active, setActive] = useState(false);
+  const [ price, setPrice ] = useState(125);
+
+  const priceHandle = () => {
+
+    setPrice(price * item);
+  }
 
   const menuHandleOpen = () => {
     setActive(true);
@@ -37,8 +43,11 @@ function App() {
               setActiveCart = {setActiveCart}
               activeCart = {activeCart} 
               cartHandle = {cartHandle} />
-     <Slider activeCart={activeCart}/>
-     <Description  item = {item} setItem = {setItem} />
+     <Slider activeCart={activeCart} 
+             item = {item} 
+             price = {price} />
+     <Description  item = {item} setItem = {setItem} 
+                   price = {price} setPrice = {setPrice} priceHandle = {priceHandle} />
      <Activemenu active ={active} menuHandleClose={menuHandleClose} />
      {/* <Cartpopup /> */}
    

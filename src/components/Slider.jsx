@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Cartpopup from "./Cartpopup";
 
-export default function Slider({ activeCart }) {
+export default function Slider({ activeCart, item, setItem, price }) {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const slides = [
@@ -62,7 +62,12 @@ export default function Slider({ activeCart }) {
         <img src="./images/icon-next.svg" alt="arrowNext" />
       </div>
 
-      <Cartpopup activeCart={activeCart} />
+      <Cartpopup
+        activeCart={activeCart}
+        item={item}
+        setItem={setItem}
+        price={price}
+      />
     </div>
   );
 }

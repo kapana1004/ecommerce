@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Cartpopup({ activeCart }) {
+export default function Cartpopup({ activeCart, item, price }) {
   //   const [activeCart, setActiveCart] = useState(false);
   const [activeContext, setActiveContex] = useState(true);
 
@@ -9,6 +9,7 @@ export default function Cartpopup({ activeCart }) {
     setActiveContex(!activeContext);
   };
 
+  console.log(item);
   // const [empty, setEmpty] = useState(false);
 
   // const emptyHandle = () => {
@@ -48,10 +49,10 @@ export default function Cartpopup({ activeCart }) {
 
           <div className="flex">
             <span className="text-[16px] font-sans text-[#69707D] font-norma">
-              $125.00 x 3{" "}
+              $125.00 x {item}{" "}
             </span>
             <span className=" text-[16px] font-sans text-[#1D2026] font-bold  pl-[5px]">
-              $375.00
+              ${price}.00
             </span>
           </div>
         </div>
