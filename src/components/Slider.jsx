@@ -1,13 +1,14 @@
 import React, { useState } from "react";
+import Cartpopup from "./Cartpopup";
 
-export default function Slider() {
+export default function Slider({ activeCart }) {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const slides = [
-    { id: 1, image: "./images/image-product-1-thumbnail.jpg", title: "prod1" },
-    { id: 2, image: "./images/image-product-2-thumbnail.jpg", title: "prod2" },
-    { id: 3, image: "./images/image-product-3-thumbnail.jpg", title: "prod3" },
-    { id: 4, image: "./images/image-product-4-thumbnail.jpg", title: "prod4" },
+    { id: 1, image: "./images/image-product-1.jpg", title: "prod1" },
+    { id: 2, image: "./images/image-product-2.jpg", title: "prod2" },
+    { id: 3, image: "./images/image-product-3.jpg", title: "prod3" },
+    { id: 4, image: "./images/image-product-4.jpg", title: "prod4" },
   ];
 
   const slideHandleRight = () => {
@@ -60,6 +61,8 @@ export default function Slider() {
         {" "}
         <img src="./images/icon-next.svg" alt="arrowNext" />
       </div>
+
+      <Cartpopup activeCart={activeCart} />
     </div>
   );
 }
