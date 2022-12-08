@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from "react";
+import productImg from "../images/image-product-1-thumbnail.jpg";
+import deleteImg from "../images/icon-delete.svg";
 
 export default function Cartpopup({ activeCart, item, price }) {
   //   const [activeCart, setActiveCart] = useState(false);
@@ -37,11 +39,7 @@ export default function Cartpopup({ activeCart, item, price }) {
             : `hidden`
         }
       >
-        <img
-          className=" w-[50px] h-[50px]"
-          src="./images/image-product-1-thumbnail.jpg"
-          alt="shoephoto"
-        />
+        <img className=" w-[50px] h-[50px]" src={productImg} alt="shoephoto" />
         <div className=" flex flex-col">
           <span className=" text-[16px] font-sans text-[#69707D] font-normal">
             Fall Limited Edition Sneakers
@@ -59,7 +57,7 @@ export default function Cartpopup({ activeCart, item, price }) {
         <img
           onClick={deleteContextHandle}
           className=" w-[14px] h-[16px] cursor-pointer"
-          src="./images/icon-delete.svg"
+          src={deleteImg}
           alt="deleteImage"
         />
       </div>

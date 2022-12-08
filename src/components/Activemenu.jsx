@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import close from "../images/icon-close.svg";
 
 export default function Activemenu({ active, menuHandleClose }) {
   // // const [active, setActive] = useState(false);
@@ -21,7 +22,7 @@ export default function Activemenu({ active, menuHandleClose }) {
           <img
             onClick={menuHandleClose}
             className=" mb-[54px] cursor-pointer"
-            src="./images/icon-close.svg"
+            src={close}
             alt="close"
           />
 

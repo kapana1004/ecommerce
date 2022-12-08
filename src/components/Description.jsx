@@ -1,4 +1,6 @@
 import React from "react";
+import minus from "../images/icon-minus.svg";
+import plus from "../images/icon-plus.svg";
 
 export default function Description({
   item,
@@ -52,14 +54,14 @@ export default function Description({
         <img
           onClick={countItemMinus}
           className=" w-[12px] h-[3.3px] cursor-pointer"
-          src="./images/icon-minus.svg"
+          src={minus}
           alt="minus"
         />
         <span className=" text-[16px] text-[#1D2026] font-bold">{item}</span>
         <img
           onClick={countItemPlus}
           className=" w-[13px] h-[13px] cursor-pointer"
-          src="./images/icon-plus.svg"
+          src={plus}
           alt="plus"
         />
       </div>
