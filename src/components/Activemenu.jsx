@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+
 import close from "../images/icon-close.svg";
 
 export default function Activemenu({ active, menuHandleClose }) {

@@ -7,7 +7,16 @@ import img4 from "../images/image-product-4.jpg";
 import arrowLeftImg from "../images/icon-previous.svg";
 import arrowRightImg from "../images/icon-next.svg";
 
-export default function Slider({ activeCart, item, setItem, price }) {
+export default function Slider({
+  activeCart,
+  item,
+  setItem,
+  price,
+  itemCount,
+  total,
+  activeContext,
+  setActiveContext,
+}) {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const slides = [
@@ -73,6 +82,10 @@ export default function Slider({ activeCart, item, setItem, price }) {
         item={item}
         setItem={setItem}
         price={price}
+        itemCount={itemCount}
+        total={total}
+        activeContext={activeContext}
+        setActiveContext={setActiveContext}
       />
     </div>
   );

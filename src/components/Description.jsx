@@ -2,13 +2,7 @@ import React from "react";
 import minus from "../images/icon-minus.svg";
 import plus from "../images/icon-plus.svg";
 
-export default function Description({
-  item,
-  setItem,
-  price,
-  setPrice,
-  priceHandle,
-}) {
+export default function Description({ item, setItem, priceHandle }) {
   // const [item, setItem] = useState(0);
 
   const countItemPlus = () => {

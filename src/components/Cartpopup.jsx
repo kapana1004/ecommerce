@@ -3,20 +3,13 @@ import { useState } from "react";
 import productImg from "../images/image-product-1-thumbnail.jpg";
 import deleteImg from "../images/icon-delete.svg";
 
-export default function Cartpopup({ activeCart, item, price }) {
-  //   const [activeCart, setActiveCart] = useState(false);
+export default function Cartpopup({ activeCart, item, setItem, total }) {
   const [activeContext, setActiveContex] = useState(true);
 
   const deleteContextHandle = () => {
     setActiveContex(!activeContext);
+    setItem(0);
   };
-
-  console.log(item);
-  // const [empty, setEmpty] = useState(false);
-
-  // const emptyHandle = () => {
-  //   setEmpty(true);
-  // };
 
   return (
     <div
@@ -34,7 +27,7 @@ export default function Cartpopup({ activeCart, item, price }) {
       <hr className=" mb-[24px]"></hr>
       <div
         className={
-          activeContext
+          activeContext && item > 0
             ? `flex flex-row justify-around  items-center`
             : `hidden`
         }
@@ -47,10 +40,10 @@ export default function Cartpopup({ activeCart, item, price }) {
 
           <div className="flex">
             <span className="text-[16px] font-sans text-[#69707D] font-norma">
-              $125.00 x {item}{" "}
+              $125.00 x {item}
             </span>
             <span className=" text-[16px] font-sans text-[#1D2026] font-bold  pl-[5px]">
-              ${price}.00
+              ${total}.00
             </span>
           </div>
         </div>
@@ -63,7 +56,7 @@ export default function Cartpopup({ activeCart, item, price }) {
       </div>
       <button
         className={
-          activeContext
+          activeContext && item > 0
             ? ` w-[312px] h-[56px] bg-[#FF7E1B] mt-[24px] ml-[24px] mb-[32px] rounded-[10px] 
       text-[16px] font-sans font-bold text-[#FFFFFF]`
             : ` hidden`
@@ -74,7 +67,9 @@ export default function Cartpopup({ activeCart, item, price }) {
 
       <span
         className={
-          activeContext ? ` hidden ` : ` pt-[50px] pl-[109px] pb-[85px]`
+          activeContext && item > 0
+            ? ` hidden `
+            : ` pt-[50px] pl-[109px] pb-[85px]`
         }
       >
         Your cart is empty.

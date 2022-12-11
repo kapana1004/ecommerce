@@ -1,11 +1,16 @@
 import React from "react";
-import { useState } from "react";
+
 import menuImg from "../images/icon-menu.svg";
 import sneackersImg from "../images/sneakers.png";
 import cartImg from "../images/icon-cart.svg";
 import avatarImg from "../images/image-avatar.png";
 
-export default function Menubar({ menuHandleOpen, cartHandle }) {
+export default function Menubar({
+  menuHandleOpen,
+  cartHandle,
+  item,
+  itemCount,
+}) {
   // const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
@@ -40,11 +45,14 @@ export default function Menubar({ menuHandleOpen, cartHandle }) {
           />
 
           <div
-            className=" w-[19px] h-[13px] rounded-[6.5px] bg-[#FF7E1B] absolute top-[-25%] ;
-         left-[10%] hidden"
+            className={
+              itemCount && item > 0
+                ? ` w-[19px] h-[13px] rounded-[6.5px] bg-[#FF7E1B] absolute top-[-25%] left-[10%]`
+                : ` hidden`
+            }
           >
             <span className=" text-xs text-white absolute top-[-2px] left-[6px]">
-              0
+              {item}
             </span>
           </div>
         </div>
