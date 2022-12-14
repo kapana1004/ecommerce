@@ -8,11 +8,13 @@ import { useState } from "react";
 function App() {
   const [item, setItem] = useState(0);
   const [itemCount, setItemCount] = useState(false);
-
   const [active, setActive] = useState(false);
   const [price, setPrice] = useState(125);
   const [total, setTotal] = useState(price);
   const [activeContext, setActiveContex] = useState(true);
+  const [activAdd, setActiveAdd] = useState(true);
+  const [activeCart, setActiveCart] = useState(false);
+  const [cartItem, setCartItem] = useState(0);
 
   const deleteContextHandle = () => {
     setActiveContex(!activeContext);
@@ -20,8 +22,10 @@ function App() {
   };
 
   const priceHandle = () => {
-    setTotal(price * item);
+    setTotal(price * cartItem);
     setItemCount(true);
+    setActiveAdd(!activAdd);
+    setCartItem(cartItem + item);
   };
 
   const menuHandleOpen = () => {
@@ -32,13 +36,11 @@ function App() {
     setActive(!active);
   };
 
-  const [activeCart, setActiveCart] = useState(false);
-
   const cartHandle = () => {
     setActiveCart(!activeCart);
   };
   return (
-    <div className="">
+    <div className=" flex flex-col ">
       <Menubar
         active={active}
         menuHandleOpen={menuHandleOpen}
@@ -47,26 +49,34 @@ function App() {
         cartHandle={cartHandle}
         item={item}
         itemCount={itemCount}
+        cartItem={cartItem}
+        // activAdd={activAdd}
       />
-      <Slider
-        activeCart={activeCart}
-        item={item}
-        setItem={setItem}
-        price={price}
-        itemCount={itemCount}
-        total={total}
-        deleteContextHandle={deleteContextHandle}
-        activeContext={activeContext}
-      />
-      <Description
-        item={item}
-        setItem={setItem}
-        price={price}
-        setPrice={setPrice}
-        priceHandle={priceHandle}
-        itemCount={itemCount}
-        setItemCount={setItemCount}
-      />
+
+      <div className=" flex flex-col  xl:flex-row xl:pl-[50px]">
+        <Slider
+          activeCart={activeCart}
+          item={item}
+          setItem={setItem}
+          price={price}
+          itemCount={itemCount}
+          total={total}
+          deleteContextHandle={deleteContextHandle}
+          activeContext={activeContext}
+        />
+
+        <Description
+          item={item}
+          setItem={setItem}
+          price={price}
+          setPrice={setPrice}
+          priceHandle={priceHandle}
+          itemCount={itemCount}
+          setItemCount={setItemCount}
+          activAdd={activAdd}
+          setActiveAdd={setActiveAdd}
+        />
+      </div>
       <Activemenu active={active} menuHandleClose={menuHandleClose} />
     </div>
   );

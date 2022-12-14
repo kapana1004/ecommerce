@@ -10,16 +10,17 @@ export default function Menubar({
   cartHandle,
   item,
   itemCount,
+  cartItem,
 }) {
   // const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
-    <div className=" flex justify-center mb-[25px]">
+    <div className=" flex justify-center mb-[25px] xl:border-b-2 xl:pb-[49px]">
       <div className=" flex pt-[20px] justify-between w-[100%] ">
         <div className=" flex">
           <img
             onClick={menuHandleOpen}
-            className=" w-[16px] h-[16px] ml-[24px] mr-[16px] cursor-pointer "
+            className=" w-[16px] h-[16px] ml-[24px] mr-[16px] cursor-pointer  xl:hidden"
             src={menuImg}
             alt="menu"
           />
@@ -29,6 +30,17 @@ export default function Menubar({
             src={sneackersImg}
             alt="sneakers"
           />
+        </div>
+
+        <div className=" mr-[400px] ml-[56px]">
+          <span className=" text-[15px] text-[#69707D] mr-[32px] ">
+            {" "}
+            Collections
+          </span>
+          <span className=" text-[15px] text-[#69707D] mr-[32px]"> Men</span>
+          <span className=" text-[15px] text-[#69707D] mr-[32px]"> Women</span>
+          <span className=" text-[15px] text-[#69707D] mr-[32px]"> About</span>
+          <span className=" text-[15px] text-[#69707D] "> Cotact</span>
         </div>
 
         <div className="flex relative">
@@ -52,7 +64,7 @@ export default function Menubar({
             }
           >
             <span className=" text-xs text-white absolute top-[-2px] left-[6px]">
-              {item}
+              {cartItem}
             </span>
           </div>
         </div>

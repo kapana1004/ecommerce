@@ -6,6 +6,10 @@ import img3 from "../images/image-product-3.jpg";
 import img4 from "../images/image-product-4.jpg";
 import arrowLeftImg from "../images/icon-previous.svg";
 import arrowRightImg from "../images/icon-next.svg";
+import smallImg1 from "../images/image-product-1-thumbnail.jpg";
+import smallImg2 from "../images/image-product-2-thumbnail.jpg";
+import smallImg3 from "../images/image-product-3-thumbnail.jpg";
+import smallImg4 from "../images/image-product-4-thumbnail.jpg";
 
 export default function Slider({
   activeCart,
@@ -53,9 +57,9 @@ export default function Slider({
     //     );
     //   })}
     // </div>
-    <div className=" relative mb-[20px] ">
+    <div className=" relative mb-[20px] xl:mt-[70px]  ">
       <img
-        className=" w-[375px] h-[300px]  "
+        className=" w-[375px] h-[300px] xl:w-[445px] xl:h-[445px] xl:rounded-[15px]"
         src={slides[slideIndex].image}
         alt={slides.title}
       />
@@ -75,6 +79,29 @@ export default function Slider({
       >
         {" "}
         <img src={arrowRightImg} alt="arrowNext" />
+      </div>
+
+      <div className=" flex flex-row w-[445px] mt-[32px] gap-[31px]">
+        <img
+          className=" w-[88px] h-[88px] rounded-[10px]"
+          src={smallImg1}
+          alt="productPicter"
+        />
+        <img
+          className=" w-[88px] h-[88px] rounded-[10px]"
+          src={smallImg2}
+          alt="productPicter"
+        />
+        <img
+          className=" w-[88px] h-[88px] rounded-[10px]"
+          src={smallImg3}
+          alt="productPicter"
+        />
+        <img
+          className=" w-[88px] h-[88px] rounded-[10px] "
+          src={smallImg4}
+          alt="productPicter"
+        />
       </div>
 
       <Cartpopup
