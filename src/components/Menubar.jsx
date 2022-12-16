@@ -72,5 +72,3 @@ export default function Menubar({
     </div>
   );
 }
-
-// how to change media wit ternary in line 35???
