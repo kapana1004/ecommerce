@@ -45,6 +45,19 @@ export default function Slider({
     }
   };
 
+  const imageOneHandle = () => {
+    setSlideIndex(0);
+  };
+  const imageTwoHandle = () => {
+    setSlideIndex(1);
+  };
+  const imageThreeHandle = () => {
+    setSlideIndex(2);
+  };
+  const imageFourHandle = () => {
+    setSlideIndex(3);
+  };
+
   return (
     // <div className="  flex justify-center ">
     //   {slides.map((item) => {
@@ -57,7 +70,7 @@ export default function Slider({
     //     );
     //   })}
     // </div>
-    <div className=" relative mb-[20px] xl:mt-[70px]  ">
+    <div className=" relative mb-[20px] xl:mt-[70px] xl:cursor-pointer  ">
       <img
         className=" w-[375px] h-[300px] xl:w-[445px] xl:h-[445px] xl:rounded-[15px]"
         src={slides[slideIndex].image}
@@ -67,7 +80,7 @@ export default function Slider({
       <div
         onClick={slideHandleLeft}
         className=" flex justify-center items-center  w-[40px] h-[40px]
-       bg-white rounded-[50%] absolute top-[40%] left-[20px] cursor-pointer "
+       bg-white rounded-[50%] absolute top-[40%] left-[20px] cursor-pointer xl:hidden "
       >
         <img src={arrowLeftImg} alt="arrowleft" />
       </div>
@@ -75,30 +88,34 @@ export default function Slider({
       <div
         onClick={slideHandleRight}
         className=" flex justify-center items-center  w-[40px] h-[40px]
-       bg-white rounded-[50%] absolute top-[40%] right-[20px] cursor-pointer "
+       bg-white rounded-[50%] absolute top-[40%] right-[20px] cursor-pointer xl:hidden"
       >
         {" "}
         <img src={arrowRightImg} alt="arrowNext" />
       </div>
 
-      <div className=" flex flex-row w-[445px] mt-[32px] gap-[31px]">
+      <div className=" hidden xl:flex flex-row w-[445px] mt-[32px] gap-[31px]">
         <img
-          className=" w-[88px] h-[88px] rounded-[10px]"
+          onClick={imageOneHandle}
+          className="w-[88px] h-[88px] rounded-[10px] cursor-pointer hover:opacity-[50%]"
           src={smallImg1}
           alt="productPicter"
         />
         <img
-          className=" w-[88px] h-[88px] rounded-[10px]"
+          onClick={imageTwoHandle}
+          className="w-[88px] h-[88px] rounded-[10px] cursor-pointer hover:opacity-[50%]"
           src={smallImg2}
           alt="productPicter"
         />
         <img
-          className=" w-[88px] h-[88px] rounded-[10px]"
+          onClick={imageThreeHandle}
+          className=" w-[88px] h-[88px] rounded-[10px] cursor-pointer hover:opacity-[50%]"
           src={smallImg3}
           alt="productPicter"
         />
         <img
-          className=" w-[88px] h-[88px] rounded-[10px] "
+          onClick={imageFourHandle}
+          className=" w-[88px] h-[88px] rounded-[10px] cursor-pointer hover:opacity-[50%]"
           src={smallImg4}
           alt="productPicter"
         />

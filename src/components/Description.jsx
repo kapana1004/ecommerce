@@ -31,13 +31,15 @@ export default function Description({ item, setItem, priceHandle, activAdd }) {
       </p>
 
       <div className=" items-center ml-[24px] flex mt-[28px] xl:flex-col xl:items-start ">
-        <span className=" mr-[16px] w-[106px] font-bold text-[28px] xl:leading-[34px] ">
-          {" "}
-          $125.00
-        </span>
-        <span className=" mr-[90px] w-[51px] bg-[#FFEEE2] pl-[9px] text-[#FF7E1B] text-[16px] font-sans rounded-[6px]">
-          50%
-        </span>
+        <div>
+          <span className=" mr-[16px] w-[106px] font-bold text-[28px] xl:leading-[34px] ">
+            {" "}
+            $125.00
+          </span>
+          <span className=" mr-[90px] w-[51px] bg-[#FFEEE2]  text-[#FF7E1B] text-[16px] font-sans rounded-[6px]">
+            50%
+          </span>
+        </div>
         <span className=" line-through text-[#B6BCC8]">$250.00</span>
       </div>
       <div className=" xl:flex xl:flex-row">

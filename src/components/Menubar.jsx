@@ -32,7 +32,7 @@ export default function Menubar({
           />
         </div>
 
-        <div className=" mr-[400px] ml-[56px]">
+        <div className=" hidden xl:flex mr-[400px] ml-[56px] ">
           <span className=" text-[15px] text-[#69707D] mr-[32px] ">
             {" "}
             Collections
@@ -72,3 +72,5 @@ export default function Menubar({
     </div>
   );
 }
+
+// how to change media wit ternary in line 35???
