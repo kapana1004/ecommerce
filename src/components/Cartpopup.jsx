@@ -16,7 +16,7 @@ export default function Cartpopup({ activeCart, item, setItem, total }) {
       className={
         activeCart
           ? ` flex flex-col w-[360px] bg-white rounded-[10px] 
-        absolute top-[3%] left-[2%]`
+        absolute top-[3%] left-[2%] xl:top-[-20%] xl:left-[174%]`
           : `hidden`
       }
     >
