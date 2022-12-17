@@ -2,11 +2,16 @@ import React from "react";
 import minus from "../images/icon-minus.svg";
 import plus from "../images/icon-plus.svg";
 
-export default function Description({ item, setItem, priceHandle, activAdd }) {
-  // const [item, setItem] = useState(0);
-
+export default function Description({
+  item,
+  setItem,
+  priceHandle,
+  activAdd,
+  setActiveAdd,
+}) {
   const countItemPlus = () => {
     setItem(item + 1);
+    setActiveAdd(true);
   };
 
   const countItemMinus = () => {
@@ -23,25 +28,27 @@ export default function Description({ item, setItem, priceHandle, activAdd }) {
         {" "}
         Fall Limited Edition Sneakers{" "}
       </h1>
-
       <p className=" w-[327px] text-[15px] font-sans font-normal pl-[24px] mt-[15px] text-[#69707D] xl:text-[16px] xl:w-[445px] xl:leading-[26px]">
         These low-profile sneakers are your perfect casual wear companion.
         Featuring a durable rubber outer sole, they’ll withstand everything the
         weather can offer.
       </p>
-
       <div className=" items-center ml-[24px] flex mt-[28px] xl:flex-col xl:items-start ">
         <div>
           <span className=" mr-[16px] w-[106px] font-bold text-[28px] xl:leading-[34px] ">
             {" "}
             $125.00
           </span>
-          <span className=" mr-[90px] w-[51px] bg-[#FFEEE2]  text-[#FF7E1B] text-[16px] font-sans rounded-[6px]">
+          <span
+            className=" mr-[90px] w-[51px] bg-[#FFEEE2]  text-[#FF7E1B] 
+           text-[16px] font-sans rounded-[6px]"
+          >
             50%
           </span>
         </div>
         <span className=" line-through text-[#B6BCC8]">$250.00</span>
       </div>
+
       <div className=" xl:flex xl:flex-row">
         <div
           className=" ml-[24px] flex justify-between items-center pl-[24px] pr-[24px] 
@@ -54,7 +61,7 @@ export default function Description({ item, setItem, priceHandle, activAdd }) {
             alt="minus"
           />
           <span className=" text-[16px] text-[#1D2026] font-bold">
-            {activAdd ? item : 0}
+            {activAdd ? item : (item = 0)}
           </span>
           <img
             onClick={countItemPlus}
@@ -73,7 +80,8 @@ export default function Description({ item, setItem, priceHandle, activAdd }) {
             <path
               d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 
         0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 
-        2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 
+        2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 
+        3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 
         0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 
         0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 
         0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z"
@@ -81,7 +89,6 @@ export default function Description({ item, setItem, priceHandle, activAdd }) {
               fillRule="nonzero"
             />
           </svg>
-
           <span className=" ml-[15px] text-[16px] font-bold text-[#FFFFFF]">
             {" "}
             Add to cart

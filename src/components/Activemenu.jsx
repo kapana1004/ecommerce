@@ -1,14 +1,7 @@
 import React from "react";
-
 import close from "../images/icon-close.svg";
 
 export default function Activemenu({ active, menuHandleClose }) {
-  // // const [active, setActive] = useState(false);
-
-  // // const menuHandleClose = () => {
-  // //   setActive(!active);
-  // };
-
   return (
     <div
       className={
@@ -25,7 +18,6 @@ export default function Activemenu({ active, menuHandleClose }) {
             src={close}
             alt="close"
           />
-
           <h2 className=" text=[#1D2026] text-[18px] font-bold leading-[26px] mb-[20px] cursor-pointer">
             {" "}
             Collections

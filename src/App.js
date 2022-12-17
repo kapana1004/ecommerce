@@ -61,7 +61,6 @@ function App() {
 
   const slideHandleRight = () => {
     setSlideIndex(slideIndex + 1);
-
     if (slideIndex >= slides.length - 1) {
       setSlideIndex(0);
     }
@@ -134,6 +133,7 @@ function App() {
           setActiveAdd={setActiveAdd}
         />
       </div>
+
       <Activemenu active={active} menuHandleClose={menuHandleClose} />
       <Activecontent
         slides={slides}

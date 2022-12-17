@@ -1,5 +1,4 @@
 import React from "react";
-
 import menuImg from "../images/icon-menu.svg";
 import sneackersImg from "../images/sneakers.png";
 import cartImg from "../images/icon-cart.svg";
@@ -12,8 +11,6 @@ export default function Menubar({
   itemCount,
   cartItem,
 }) {
-  // const [mobileMenu, setMobileMenu] = useState(false);
-
   return (
     <div className=" flex justify-center mb-[25px] xl:border-b-2 xl:pb-[49px]">
       <div className=" flex pt-[20px] justify-between w-[100%] ">
@@ -24,7 +21,6 @@ export default function Menubar({
             src={menuImg}
             alt="menu"
           />
-
           <img
             className=" w-[137.5px]  h-[20px]"
             src={sneackersImg}
@@ -55,17 +51,14 @@ export default function Menubar({
             src={avatarImg}
             alt="avatar"
           />
-
           <div
             className={
               itemCount && item > 0
-                ? ` w-[19px] h-[13px] rounded-[6.5px] bg-[#FF7E1B] absolute top-[-25%] left-[10%]`
+                ? ` flex justify-center items-center w-[19px] h-[13px] rounded-[6.5px] bg-[#FF7E1B] absolute top-[-25%] left-[10%]`
                 : ` hidden`
             }
           >
-            <span className=" text-xs text-white absolute top-[-2px] left-[6px]">
-              {cartItem}
-            </span>
+            <span className=" text-[10px] text-white ">{cartItem}</span>
           </div>
         </div>
       </div>

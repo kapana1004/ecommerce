@@ -5,18 +5,16 @@ import deleteImg from "../images/icon-delete.svg";
 
 export default function Cartpopup({ activeCart, item, setItem, total }) {
   const [activeContext, setActiveContex] = useState(true);
-
   const deleteContextHandle = () => {
     setActiveContex(!activeContext);
     setItem(0);
   };
-
   return (
     <div
       className={
         activeCart
           ? ` flex flex-col w-[360px] bg-white rounded-[10px] 
-        absolute top-[3%] left-[2%] xl:top-[-20%] xl:left-[174%]`
+      absolute top-[3%] left-[2%] xl:top-[-20%] xl:left-[174%]`
           : `hidden`
       }
     >
@@ -37,7 +35,6 @@ export default function Cartpopup({ activeCart, item, setItem, total }) {
           <span className=" text-[16px] font-sans text-[#69707D] font-normal">
             Fall Limited Edition Sneakers
           </span>
-
           <div className="flex">
             <span className="text-[16px] font-sans text-[#69707D] font-norma">
               $125.00 x {item}
@@ -57,14 +54,13 @@ export default function Cartpopup({ activeCart, item, setItem, total }) {
       <button
         className={
           activeContext && item > 0
-            ? ` w-[312px] h-[56px] bg-[#FF7E1B] mt-[24px] ml-[24px] mb-[32px] rounded-[10px] 
-      text-[16px] font-sans font-bold text-[#FFFFFF]`
+            ? ` w-[312px] h-[56px] bg-[#FF7E1B] mt-[24px] ml-[24px] mb-[32px] 
+            rounded-[10px] text-[16px] font-sans font-bold text-[#FFFFFF]`
             : ` hidden`
         }
       >
         Checkout
       </button>
-
       <span
         className={
           activeContext && item > 0
@@ -77,5 +73,3 @@ export default function Cartpopup({ activeCart, item, setItem, total }) {
     </div>
   );
 }
-
-// delete statement need completation

@@ -40,11 +40,10 @@ export default function Activecontent({
           src={slides[slideIndex].image}
           alt={slides.title}
         />
-
         <div
           onClick={slideHandleLeft}
           className=" flex justify-center items-center  w-[56px] h-[56px]
-       bg-white rounded-[50%] absolute top-[46%] left-[-5.5%] cursor-pointer  "
+          bg-white rounded-[50%] absolute top-[46%] left-[-5.5%] cursor-pointer  "
         >
           <img src={arrowLeftImg} alt="arrowleft" />
         </div>

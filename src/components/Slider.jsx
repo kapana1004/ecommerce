@@ -1,6 +1,5 @@
 import React from "react";
 import Cartpopup from "./Cartpopup";
-
 import arrowLeftImg from "../images/icon-previous.svg";
 import arrowRightImg from "../images/icon-next.svg";
 import smallImg1 from "../images/image-product-1-thumbnail.jpg";
@@ -27,55 +26,7 @@ export default function Slider({
   imageFourHandle,
   contentCloseHandle,
 }) {
-  // const [slideIndex, setSlideIndex] = useState(0);
-
-  // const slides = [
-  //   { id: 1, image: img1, title: "prod1" },
-  //   { id: 2, image: img2, title: "prod2" },
-  //   { id: 3, image: img3, title: "prod3" },
-  //   { id: 4, image: img4, title: "prod4" },
-  // ];
-
-  // const slideHandleRight = () => {
-  //   setSlideIndex(slideIndex + 1);
-
-  //   if (slideIndex >= slides.length - 1) {
-  //     setSlideIndex(0);
-  //   }
-  // };
-
-  // const slideHandleLeft = () => {
-  //   setSlideIndex(slideIndex - 1);
-  //   if (slideIndex <= 0) {
-  //     setSlideIndex(slides.length - 1);
-  //   }
-  // };
-
-  // const imageOneHandle = () => {
-  //   setSlideIndex(0);
-  // };
-  // const imageTwoHandle = () => {
-  //   setSlideIndex(1);
-  // };
-  // const imageThreeHandle = () => {
-  //   setSlideIndex(2);
-  // };
-  // const imageFourHandle = () => {
-  //   setSlideIndex(3);
-  // };
-
   return (
-    // <div className="  flex justify-center ">
-    //   {slides.map((item) => {
-    //     const { id, image, title } = item;
-    //     return (
-    //       <div className=" flex justify-center" key={id}>
-    //         <img src={image} alt={title} />
-    //       </div>
-
-    //     );
-    //   })}
-    // </div>
     <div className=" relative mb-[20px] xl:mt-[70px] xl:cursor-pointer  ">
       <img
         onClick={contentCloseHandle}
@@ -83,7 +34,6 @@ export default function Slider({
         src={slides[slideIndex].image}
         alt={slides.title}
       />
-
       <div
         onClick={slideHandleLeft}
         className=" flex justify-center items-center  w-[40px] h-[40px]
